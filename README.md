@@ -13,7 +13,7 @@ This does close to what is shown in the video.
 https://www.youtube.com/watch?v=5RqFnBqBJGE
 
 # Speed
-It's 50% slower than table.sort() because it is non-native, but it is made as optimal as possible.
+It's on average 50% slower than table.sort() because it is non-native, but it is made as optimal as possible.
 
 # Usage
 Usage is the same as table.sort()
