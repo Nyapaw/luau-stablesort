@@ -32,22 +32,31 @@ return function()
         end)
     end)
 
+    local Size = 128
     describe("stability test", function()
         it("should preserve the order of non-unique elements", function()
             local array = {}
-            for i = 1, 500 do
-                table.insert(array, {math.floor(i/25), i})
+            for i = 1, Size do
+                table.insert(array, {math.floor(i/(math.ceil(Size/2 + 1)))})
             end
-            local arrdup = {unpack(array)}
+            
             --shuffle the array
-            for i = 1, 499 do
-                local rand = math.random(i + 1, 50)
+            for i = 1, Size-1 do
+                local rand = math.random(i + 1, Size)
                 array[i], array[rand] = array[rand], array[i]
             end
-            sort.sort(array, function(a, b) return a[1] < b[1] end)
 
-            for i = 1, 500 do
-                expect(arrdup[i]).to.equal(array[i])
+            for i = 1, Size do
+                array[i][2] = i
+            end
+
+            --Now sort them in ascending order
+            sort.sort(array, function(a, b) 
+                return a[1] < b[1] 
+            end)
+
+            for i = 1, Size/2 - 1 do
+                expect(array[i][2] < array[i + 1][2]).to.equal(true)
             end
         end)
     end)

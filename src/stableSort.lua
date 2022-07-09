@@ -125,8 +125,8 @@ sort.mergeAtoB = function(arr1, arr2, staA, staB, callback)
             Object = arr1[ptrA];
             ptrA += 1
         else
-            --? is obj from A less than obj from B?
-            if if callback then callback(arr1[ptrA], arr1[ptrB]) else arr1[ptrA] < arr1[ptrB] then
+            --? is obj from A <= obj from B?
+            if if callback then not callback(arr1[ptrB], arr1[ptrA]) else arr1[ptrA] <= arr1[ptrB] then
                 Object = arr1[ptrA];
                 ptrA += 1
             else
