@@ -1,0 +1,10 @@
+{
+  "name": "luau-stablesort",
+  "tree": {
+    "$className": "DataModel",
+
+    "ReplicatedStorage": {
+        "$path": "src"
+    }
+  }
+}
