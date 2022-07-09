@@ -9,9 +9,12 @@ Stability is important for some game mechanics such as having a shop display whi
 # Algorithm
 This is nearly the same implementation as C++'s std::stable_sort, which uses binary insertion sort for runs up to 32 elements, and then merges them using a bottom up merge sort. It has a memory complexity of O(n).
 
-This does exactly what is shown in the video.    
+This does close to what is shown in the video.    
 https://www.youtube.com/watch?v=5RqFnBqBJGE
 
+# Speed
+It's 50% slower than table.sort() because it is non-native, but it is made as optimal as possible.
+
 # Usage
-Usage is the same as table.sort
+Usage is the same as table.sort()
 `sort.sort(array, comparator)`
