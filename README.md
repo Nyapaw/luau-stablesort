@@ -12,9 +12,15 @@ This is nearly the same implementation as C++'s std::stable_sort, which uses bin
 This does close to what is shown in the video.    
 https://www.youtube.com/watch?v=5RqFnBqBJGE
 
+And here's my own visualizer of this sort of the integers 1 to 800. Take note how the rainbow colors never have a break in the hue.
+https://user-images.githubusercontent.com/45115274/178126681-bc4dc8e5-a658-44f2-a330-aab553ee2b53.mp4
+
 # Speed
 It's on average 50% slower than table.sort() because it is non-native, but it is made as optimal as possible.
 
 # Usage
 Usage is the same as table.sort()
 `sort.sort(array, comparator)`
+
+
+
