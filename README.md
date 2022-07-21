@@ -18,3 +18,6 @@ It's on average 50% slower than table.sort() because it is non-native, but it is
 # Usage
 Usage is the same as table.sort()
 `sort.sort(array, comparator)`
+
+
+
