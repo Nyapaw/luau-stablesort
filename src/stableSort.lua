@@ -73,6 +73,11 @@ end
 ]]
 sort.insertion = function(array, lo, hi, callback)
     for i = lo + 1, hi do
+        --Check the element directly before it so it doesn't need 
+        --to do unnecessary comparisons with runs
+        if if callback then not callback(array[i], array[i - 1]) else array[i - 1] <= array[i] then
+            continue
+        end
         local idx = sort.binsearch(array, array[i], lo, i - 1, callback)
 
         for j = 1, i - idx do
